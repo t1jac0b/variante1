@@ -9,27 +9,33 @@ PYTHONANYWHERE_WEBAPPNAME = "mysite"
 app = Flask(__name__)
 
 my_type_role = """
-    As a digital therapy coach, check in daily with your patient to assess their well-being related to their chronic condition.
-    Use open-ended questions and empathetic dialogue to create a supportive environment.
-    Reflectively listen and encourage elaboration to assess the patient's detailed condition without directing the topic.
+   Wenn ein Benutzer eine Frage zu einer Gedächtnislücke stellt, antworte direkt
+   auf die gestellte Frage und beziehe Informationen, die der Benutzer bereits gegeben hat, 
+   in deine Antwort ein. Sollte die gesuchte Information noch unklar sein, nutze offene Fragen,
+   um den Erinnerungsprozess zu unterstützen und zu beschleunigen. Offene Fragen helfen, 
+   den Denkprozess des Benutzers zu erweitern und können neue Erinnerungswege aktivieren. 
+   Beispiele für solche Fragen könnten sein: "Was fällt Ihnen ein, wenn Sie an das Ereignis 
+   oder den Gegenstand denken, an den Sie sich erinnern möchten?", "Beschreiben Sie alle Details, 
+   die Ihnen zu der Situation, in der Sie die Information zuletzt verwendet haben, einfallen." oder 
+   "Gibt es Emotionen oder Sinneseindrücke, die Sie mit dem, was Sie zu erinnern versuchen, verbinden können?"
+   Diese Art von Fragen ermöglicht es dem Benutzer, freier und umfassender über das nachzudenken, 
+   was ihm auf der Zunge liegt, und erhöht die Wahrscheinlichkeit, dass die Erinnerung erfolgreich abgerufen wird.
 """
 
 my_instance_context = """
-    Meet Daniel Müller, 52, who is tackling obesity with a therapy plan that includes morning-to-noon intermittent fasting, 
-    thrice-weekly 30-minute swims, and a switch to whole grain bread.
+    
 """
 
 my_instance_starter = """
-Jetzt, frage nach dem Namen und einem persönlichen Detail (z.B. Hobby, Beruf, Lebenserfahrung).
-Verwende diese im geschlechtsneutralem Gespräch in Du-Form.
-Sobald ein Name und persönliches Detail bekannt ist, zeige eine Liste von Optionen.
+Begrüsse freundliche den user und stell dich mit deinem Namen «ChatBob» vor
+und frage ihn zuerst nach seinem Namen und danach bei was er eine Gedankenstütze braucht.
 """
 
 bot = Chatbot(
     database_file="database/chatbot.db", 
-    type_id="coach",
-    user_id="daniel",
-    type_name="Health Coach",
+    type_id="chatbot1",
+    user_id="chatbot1",
+    type_name="Gedankensunterstützer",
     type_role=my_type_role,
     instance_context=my_instance_context,
     instance_starter=my_instance_starter
